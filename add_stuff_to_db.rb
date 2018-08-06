@@ -6,8 +6,7 @@ def add_category_to_authors_books(category_title, author_name)
   author = Author.find_by(name: author_name)
   category = Category.find_or_create_by(title: category_title)
   author.books.each do |book|
-    book.categories << category unless book.categories.include?
-    (category)
+    book.categories << category unless book.categories.include?(category)
   end
 end
 
